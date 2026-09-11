@@ -1,0 +1,3 @@
+"model","threshold","auc","recall_bad","specificity_good","precision_bad","accuracy","false_positives","false_negatives"
+"Logistic regression",0.2,0.771793154761907,0.8625,0.564285714285714,0.458980044345898,0.65375,244,33
+"Balanced random forest",0.55,0.768556547619048,0.591666666666667,0.808928571428571,0.570281124497992,0.74375,107,98

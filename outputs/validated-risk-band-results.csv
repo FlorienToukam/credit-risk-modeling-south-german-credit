@@ -1,0 +1,4 @@
+"risk_band","observations","average_predicted_risk","actual_bad_credit_rate"
+"Low risk",73,0.0737623315205378,0.178082191780822
+"Moderate risk",64,0.25082772047223,0.265625
+"High risk",63,0.541942714925709,0.476190476190476

@@ -1,0 +1,8 @@
+"driver","odds_ratio","ci_lower","ci_upper","p_value","interpretation"
+"Checking status: ≥ 200 DM / salary vs. no account",6.44555683153574,4.27507139496782,9.7180138131634,5.83599480041456e-19,"Higher estimated odds of a good credit outcome"
+"Checking status: 0–200 DM vs. no account",2.9690719622933,1.52359656422617,5.78590719109,0.00138859102362613,"Higher estimated odds of a good credit outcome"
+"Savings: 500–1,000 DM vs. no / unknown",2.6415859807819,1.05518314128669,6.61304774577287,0.0380119295949619,"Higher estimated odds of a good credit outcome"
+"Savings: ≥ 1,000 DM vs. no / unknown",2.15124733710897,1.35855282573211,3.4064668062683,0.00108819266007022,"Higher estimated odds of a good credit outcome"
+"Employment duration: 4–<7 years vs. unemployed",2.0893442536258,1.03147794179744,4.23214034277082,0.040750533872196,"Higher estimated odds of a good credit outcome"
+"Checking status: < 0 DM vs. no account",1.62805326233831,1.12235767427711,2.36159780946621,0.0102209340199581,"Higher estimated odds of a good credit outcome"
+"Loan duration: each additional month",0.964413316281001,0.949391988305878,0.979672312465795,6.06334920588201e-06,"Lower estimated odds of a good credit outcome"

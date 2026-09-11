@@ -1,0 +1,3 @@
+"model","selected_threshold","selection_method"
+"Logistic regression",0.2,"Five-fold cross-validated Youden's J"
+"Balanced random forest",0.55,"Five-fold cross-validated Youden's J"

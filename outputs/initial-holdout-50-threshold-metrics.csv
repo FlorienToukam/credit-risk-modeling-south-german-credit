@@ -1,0 +1,6 @@
+"metric","value"
+"ROC/AUC",0.679166666666667
+"Sensitivity / Recall (bad credit)",0.3
+"Specificity (good credit)",0.878571428571429
+"Precision (bad credit)",0.514285714285714
+"Accuracy",0.705

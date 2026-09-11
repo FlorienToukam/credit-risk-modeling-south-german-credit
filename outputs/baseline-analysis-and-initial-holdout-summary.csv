@@ -1,0 +1,6 @@
+"measure","baseline_full_sample_analysis","initial_holdout_50_percent_threshold"
+"Sample size",1000,200
+"ROC/AUC",0.772809523809524,0.679166666666667
+"Accuracy",0.747,0.705
+"Good-credit recall",0.895714285714286,0.878571428571429
+"Bad-credit recall",0.4,0.3
