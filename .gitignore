@@ -1,0 +1,19 @@
+# Local data downloaded from UCI
+data/raw/
+
+# macOS and Windows system files
+.DS_Store
+._*
+__MACOSX/
+Thumbs.db
+
+# Archive and temporary files
+*.zip
+*.tmp
+*.temp
+*~
+
+# R session files
+.Rhistory
+.RData
+.Rproj.user/
