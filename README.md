@@ -1,21 +1,35 @@
-# Credit Risk Modeling: South German Credit Data
+# Borrower credit risk analysis
 
-## Overview
+How many risky borrowers should a model catch, and how much extra review does that create? I explored that trade-off with logistic regression and a random forest using the South German Credit dataset.
 
-I analyzed borrower and loan characteristics associated with credit outcomes using the UCI South German Credit data set. The project combines statistical analysis, an interpretable logistic-regression model, development-stage cross-validation, a final holdout evaluation, risk bands, and a random-forest challenger model.
+[Underwriting summary](docs/underwriting-executive-summary.md) · [Methods](docs/methodology-notes.md) · [Final model results](outputs/holdout-model-comparison.csv)
 
-## Credit-risk question
+## What I found
 
-Which borrower and loan attributes are associated with credit outcomes, and how well can an interpretable model rank cases for credit review?
+At thresholds selected through development-stage cross-validation, logistic regression caught more bad-credit cases. The random forest produced a smaller review queue but missed more of them.
 
-## Data
+| Final 200-record holdout | Logistic regression | Balanced random forest |
+| --- | ---: | ---: |
+| Screening threshold | 20% | 55% |
+| ROC AUC | 0.679 | 0.692 |
+| Bad-credit recall | 70.0% | 45.0% |
+| Good-credit specificity | 58.6% | 82.1% |
+| Bad-credit precision | 42.0% | 51.9% |
 
-- **Source:** [UCI Machine Learning Repository — South German Credit](https://archive.ics.uci.edu/dataset/573/south+german+credit+update)
-- **Observations:** 1,000
-- **Fields:** 21
-- **Outcome:** kredit — bad (0) or good (1) credit outcome
+The thresholds differ because each model’s rule was chosen from its own development predictions. For a broad initial screen, I would favor logistic regression in this example. It still missed 18 bad-credit cases and flagged 58 good-credit cases, so the result needs to be considered alongside review capacity and the cost of mistakes.
 
-The raw data remains local in data/raw/ and is excluded from version control. Download SouthGermanCredit.asc and the codebook from UCI to reproduce the analysis.
+The holdout AUCs were also below the development cross-validation results of 0.772 and 0.769. That makes me cautious about treating either model as a dependable lending rule. This is a screening study, not an automated approval system.
+
+![Screening threshold trade-off](outputs/figures/credit-screening-threshold-tradeoff.png)
+
+## Data and tools
+
+The [UCI South German Credit dataset](https://archive.ics.uci.edu/dataset/573/south+german+credit+update) has 1,000 records and 21 fields. The outcome is coded as bad credit (0) or good credit (1). An 800-record development sample is used for cross-validation and threshold selection; the remaining 200 records provide the final check.
+
+The analysis uses R, pROC and randomForest. Raw data are excluded from the repository; [data instructions](data/README.md) explain what to download. This small, historical sample and its coded borrower attributes are not a complete underwriting file. Larger samples and external validation would be needed before applying the approach to a current loan book.
+
+<details>
+<summary>Exploratory findings, full validation results and run instructions</summary>
 
 ## Baseline Full-Sample Analysis
 
@@ -159,3 +173,5 @@ credit-risk-modeling-south-german-credit/
 - Assess probability calibration and consider calibration methods for the random forest.
 - Test regularized logistic regression and cost-sensitive model selection.
 - Add external or time-based validation if a suitable data set becomes available.
+
+</details>
